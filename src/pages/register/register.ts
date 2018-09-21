@@ -41,8 +41,15 @@ export class RegisterPage {
     this.isChecked = event;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
+  loginUserWithFacebook(){
+    console.log("Conectar con Facebook");
   }
 
+  loginUserWithTwitter(){
+    console.log("Conectar con Twitter");
+  }
+
+  loginUserWithGoogle(){
+    console.log("Conectar con Google Plus");
+  }
 }

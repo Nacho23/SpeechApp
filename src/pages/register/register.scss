@@ -1,3 +1,27 @@
 page-register {
 
+    * {
+        font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    }
+    
+    .label-who-are-u {
+        color: rgb(66, 66, 66)
+    }
+
+    .btn-login {
+        height: 50px;
+    }
+
+    .btn-facebook {
+        background: rgb(59, 89, 152);
+    }
+
+    .btn-twitter {
+        background: rgb(0, 172, 237);
+    }
+
+    .btn-gplus {
+        background: rgb(211, 72, 54);
+    }
+
 }
