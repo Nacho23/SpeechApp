@@ -1,0 +1,7 @@
+{
+  "name": "speechApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

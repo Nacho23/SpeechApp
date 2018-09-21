@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Speech Recognition App Test
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button (click)="isSpeechSupported()"> Soporta voz? </button>
+  <button ion-button (click)="getPermission()"> Dar Permisos </button>
+  <button ion-button (click)="hasPermission()"> Tiene Permisos? </button>
+  <button ion-button (click)="getSuppotedLanguages()"> Que lenguajes soporta? </button>
+  <button ion-button (click)="listenForSpeech()"> Hablar </button>
+
+  <ion-card>
+    {{text}}
+  </ion-card>
+</ion-content>
