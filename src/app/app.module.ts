@@ -5,21 +5,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { Vibration } from '@ionic-native/vibration';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AuthProvider } from '../providers/auth/auth';
 import { UserProvider } from '../providers/user/user';
 import { MessageProvider } from '../providers/message/message';
-import { RegisterPage } from '../pages/register/register';
-import { WallPage } from '../pages/wall/wall';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    RegisterPage,
-    WallPage
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -28,9 +25,7 @@ import { WallPage } from '../pages/wall/wall';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    RegisterPage,
-    WallPage
+    HomePage
   ],
   providers: [
     StatusBar,
@@ -39,7 +34,8 @@ import { WallPage } from '../pages/wall/wall';
     SpeechRecognition,
     AuthProvider,
     UserProvider,
-    MessageProvider
+    MessageProvider,
+    Vibration
   ]
 })
 export class AppModule {}

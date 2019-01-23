@@ -5,12 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import { firebaseConfig } from './credentials';
 
-import { RegisterPage } from '../pages/register/register';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = RegisterPage;
+  rootPage: any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -21,6 +20,6 @@ export class MyApp {
     });
 
     firebase.initializeApp(firebaseConfig);
+    this.rootPage = 'RegisterPage';
   }
 }
-

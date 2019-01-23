@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>wall</ion-title>
+    <ion-title>Lista de Mensajes</ion-title>
+    <ion-buttons right>
+        <button ion-button color="danger" outline (click)="deleteMessages()">
+          Borrar Mensajes
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -16,8 +21,8 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let message of messageList">
+      <p>{{message.emitterName}} dice: </p>
       <h2 text-wrap>{{message.text}}</h2>
-      <p>{{message.emitterName}}</p>
       <!--<ion-note item-end small>{{message.date}}</ion-note>-->
     </ion-item>
   </ion-list>

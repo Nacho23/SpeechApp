@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
-import { WallPage } from '../wall/wall';
 
 /**
  * Generated class for the RegisterPage page.
@@ -21,35 +20,43 @@ export class RegisterPage {
   isChecked = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public authProvider: AuthProvider) {
+    public authProvider: AuthProvider, private alertCtrl: AlertController) {
   }
 
   loginUser(username) {
     console.log(username);
-    if(!this.isChecked){
-      this.authProvider.loginUser();
-      this.navCtrl.setRoot(HomePage, {username: username});
+    if (!this.isChecked) {
+      if (username != undefined) {
+        this.authProvider.loginUser();
+        this.navCtrl.setRoot(HomePage, { username: username });
+      } else {
+        let alert = this.alertCtrl.create({
+          title: 'ERROR',
+          subTitle: 'Debe ingresar un nombre de usuario válido',
+          buttons: ['Aceptar']
+        });
+        alert.present();
+      }
     }
-    else 
-    {
-      this.navCtrl.setRoot(WallPage);
+    else {
+      this.navCtrl.setRoot("WallPage");
     }
   }
 
-  checkValue(event: any){
+  checkValue(event: any) {
     console.log(event);
     this.isChecked = event;
   }
 
-  loginUserWithFacebook(){
+  loginUserWithFacebook() {
     console.log("Conectar con Facebook");
   }
 
-  loginUserWithTwitter(){
+  loginUserWithTwitter() {
     console.log("Conectar con Twitter");
   }
 
-  loginUserWithGoogle(){
+  loginUserWithGoogle() {
     console.log("Conectar con Google Plus");
   }
 }

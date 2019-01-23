@@ -17,4 +17,14 @@ export class MessageProvider {
   getMessages() {
     return firebase.database().ref('/messages/');
   }
+
+  deleteMessages() {
+    return firebase.database().ref('/messages').remove()
+      .then(res => {
+        console.log("Borrado Exitosamente");
+      })
+      .catch(err => {
+        console.log("Error: " + err.message);
+      });
+  }
 }
